@@ -1,5 +1,5 @@
-async function displayPages (){
-    let listPages = await axios('http://localhost:3000/pages')
+async function displayPages() {
+    let listPages = await axios('http://localhost:3004/pages')
     listPages = listPages.data
     console.log(listPages);
     let str = ''
@@ -9,14 +9,14 @@ async function displayPages (){
     $("ul#list-pages").html(str)
 }
 displayPages()
-function renderPage(el){
+function renderPage(el) {
     return `
     <li class="active"><a href="${el.link}" title="">${el.page}</a></li>`
 }
 
 
-async function display (){
-    let listDirectories = await axios('http://localhost:3000/directories')
+async function display() {
+    let listDirectories = await axios('http://localhost:3004/directories')
     listDirectories = listDirectories.data
     console.log(listDirectories);
     let str = ''
@@ -26,23 +26,23 @@ async function display (){
     $("ul#newsDirectory").html(str)
 }
 display()
-function renderDirectory(el){
+function renderDirectory(el) {
     return `<li>
     <a href="danhmuc.html">${el.directory}</a>
     </li>`
 }
 
-async function displayContent(){
-    let mainContents = await axios("http://localhost:3000/mainContents")
+async function displayContent() {
+    let mainContents = await axios("http://localhost:3004/mainContents")
     mainContents = mainContents.data
 
-    function render(el){
+    function render(el) {
         return `<p>
         ${el.content}</p>`
     }
-let str = ''
-    function display(){
-        
+    let str = ''
+    function display() {
+
         for (const el of mainContents) {
             str += render(el)
         }

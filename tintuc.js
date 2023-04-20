@@ -1,5 +1,6 @@
-async function display (){
-    let listDirectories = await axios('http://localhost:3000/directories')
+async function display() {
+
+    let listDirectories = await axios('http://localhost:3004/directories')
     listDirectories = listDirectories.data
     console.log(listDirectories);
     let str = ''
@@ -9,23 +10,29 @@ async function display (){
     $("ul#newsDirectory").html(str)
 }
 display()
-function renderDirectory(el){
+function renderDirectory(el) {
     return `<li>
-    <a href="danhmuc.html">${el.directory}</a>
+    <a href="danhmuc.html?cid=${el.id}">${el.directory}</a>
     </li>`
 }
 
 
-let listNews=[]
-async function getData(){
-    listNews = await axios('http://localhost:3000/news')
+let listNews = []
+async function getData() {
+    listNews = await axios('http://localhost:3004/news')
 
-    listNews = listNews.data 
+    listNews = listNews.data
     console.log(listNews);
-    function render(neww){
+    function render(neww) {
         return `
-        <li><p><strong>${neww.content}</p></strong>
-        <p>${neww.detail}</p>
+        <li>
+            <h2>
+            <a href="chitiet.html?did=${neww.id}" title="">${neww.content}</a>
+            </h2>
+            <div class="item">
+            <p>${neww.detail}</p>
+            <div class="clr"></div>
+        </div>
         </li>
         `
     }
