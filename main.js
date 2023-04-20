@@ -15,7 +15,7 @@ function renderPage(el) {
 }
 
 
-async function display() {
+async function displayDirectories() {
     let listDirectories = await axios('http://localhost:3004/directories')
     listDirectories = listDirectories.data
     console.log(listDirectories);
@@ -25,7 +25,7 @@ async function display() {
     }
     $("ul#newsDirectory").html(str)
 }
-display()
+displayDirectories()
 function renderDirectory(el) {
     return `<li>
     <a href="danhmuc.html">${el.directory}</a>

@@ -18,32 +18,32 @@ async function getData() {
 
     listNews = listNews.data
 
-    let listNewByCatID = listNews.filter(function (news) {
+    let listNewsByCID = listNews.filter(function (news) {
         return news.cat_id == cid
     })
 
-    function render(listNewByCatID) {
+    function render(listNewsByCID) {
         return `
         <li>
         <h2>
-        <a href="chitiet.html?did=${listNewByCatID.id}" title="">${listNewByCatID.content}</a>
+        <a href="chitiet.html?did=${listNewsByCID.id}" title="">${listNewsByCID.content}</a>
         </h2>
         <div class="item">
-        <p>${listNewByCatID.detail}</p>
+        <p>${listNewsByCID.detail}</p>
         <div class="clr"></div>
     </div>
     </li>
         `
     }
     let str = ''
-    function display(listNewByCatID) {
-        for (const neww of listNewByCatID) {
+    function display(listNewsByCID) {
+        for (const neww of listNewsByCID) {
             str += render(neww)
         }
         $("ul#list-news").html(str)
 
     }
-    display(listNewByCatID)
+    display(listNewsByCID)
 }
 getData()
 

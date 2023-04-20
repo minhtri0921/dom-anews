@@ -1,4 +1,4 @@
-async function display() {
+async function displayDirectories() {
 
     let listDirectories = await axios('http://localhost:3004/directories')
     listDirectories = listDirectories.data
@@ -9,7 +9,7 @@ async function display() {
     }
     $("ul#newsDirectory").html(str)
 }
-display()
+displayDirectories()
 function renderDirectory(el) {
     return `<li>
     <a href="danhmuc.html?cid=${el.id}">${el.directory}</a>

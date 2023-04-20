@@ -13,30 +13,30 @@ let did = findGetParameter('did');
 
 let listNews = []
 async function getData() {
-    listNewByCatID = await axios(`http://localhost:3004/news/${did}`)
+    listNewByCID = await axios(`http://localhost:3004/news/${did}`)
 
-    listNewByCatID = listNewByCatID.data
+    listNewByCID = listNewByCID.data
 
-    console.log(listNewByCatID);
-    function render(listNewByCatID) {
+    console.log(listNewByCID);
+    function render(listNewByCID) {
         return `
         
-				<h3>${listNewByCatID.content}</h3>
+				<h3>${listNewByCID.content}</h3>
 				<div class="main-content">
-					<p>${listNewByCatID.detail}</p>
+					<p>${listNewByCID.detail}</p>
 				</div>
 			
         `
     }
     let str = ''
-    function display(listNewByCatID) {
+    function display(listNewByCID) {
 
-        str += render(listNewByCatID)
+        str += render(listNewByCID)
 
         $("div#detail").html(str)
 
     }
-    display(listNewByCatID)
+    display(listNewByCID)
 }
 getData()
 
