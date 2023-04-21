@@ -14,16 +14,17 @@ let cid = findGetParameter('cid');
 
 let listNews = []
 async function getData() {
-    listNews = await axios('http://localhost:3004/news')
+    try {
+        listNews = await axios('http://localhost:3004/news')
 
-    listNews = listNews.data
+        listNews = listNews.data
 
-    let listNewsByCID = listNews.filter(function (news) {
-        return news.cat_id == cid
-    })
+        let listNewsByCID = listNews.filter(function (news) {
+            return news.cat_id == cid
+        })
 
-    function render(listNewsByCID) {
-        return `
+        function render(listNewsByCID) {
+            return `
         <li>
         <h2>
         <a href="chitiet.html?did=${listNewsByCID.id}" title="">${listNewsByCID.content}</a>
@@ -34,16 +35,19 @@ async function getData() {
     </div>
     </li>
         `
-    }
-    let str = ''
-    function display(listNewsByCID) {
-        for (const neww of listNewsByCID) {
-            str += render(neww)
         }
-        $("ul#list-news").html(str)
+        let str = ''
+        function display(listNewsByCID) {
+            for (const neww of listNewsByCID) {
+                str += render(neww)
+            }
+            $("ul#list-news").html(str)
 
+        }
+        display(listNewsByCID)
+    } catch (error) {
+        console.error(error)
     }
-    display(listNewsByCID)
 }
 getData()
 
@@ -60,7 +64,7 @@ async function display() {
 display()
 function renderDirectory(el) {
     return `<li>
-    <a href="danhmuc.html">${el.directory}</a>
+    <a href="danhmuc.html?cid=${el.id}">${el.directory}</a>
     </li>`
 }
 

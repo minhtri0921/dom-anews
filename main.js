@@ -28,7 +28,7 @@ async function displayDirectories() {
 displayDirectories()
 function renderDirectory(el) {
     return `<li>
-    <a href="danhmuc.html">${el.directory}</a>
+    <a href="danhmuc.html?cid=${el.id}">${el.directory}</a>
     </li>`
 }
 
