@@ -7,19 +7,20 @@
 	<meta name="description" content="Thiet ke website, dao tap lap trinh">
 	<meta name="keywords" content="thiet ke website, dao tap lap trinh">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="lib/jquery-3.6.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#header").load("./inc/header.html");
+			$("#footer").load("./inc/footer.html");
+		});
+	</script>
 </head>
 
 <body>
 	<div class="wrapper">
 		<!-- begin header -->
 		<div id="header">
-			<div class="header-left fl">
-				<a href="index.html" title=""><img src="images/logo_edu.png" alt="" /></a>
-			</div>
-			<div class="header-right fr">
-				<a href="index.html" title=""><img src="images/banner.jpg" alt="" /></a>
-			</div>
-			<div class="clr"></div>
+
 		</div>
 		<!-- end header -->
 
@@ -87,12 +88,12 @@
 		<!-- end content -->
 
 		<div id="footer">
-			<p>Trung tâm đào tạo Lập trình viên VinaEnter EDU</p>
-			<p>Copyright &copy 2014 - Designed by <a href="" title="">VinaEnter</a></p>
+
 		</div>
 	</div>
 </body>
 <script src="lib/axios.min.js"></script>
 <script src="lib/jquery-3.6.3.min.js"></script>
 <script src="main.js"></script>
+
 </html>

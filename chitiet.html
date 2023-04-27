@@ -7,19 +7,20 @@
 	<meta name="description" content="Thiet ke website, dao tap lap trinh">
 	<meta name="keywords" content="thiet ke website, dao tap lap trinh">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="lib/jquery-3.6.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#header").load("./inc/header.html");
+			$("#footer").load("./inc/footer.html");
+		});
+	</script>
 </head>
 
 <body>
 	<div class="wrapper">
 		<!-- begin header -->
 		<div id="header">
-			<div class="header-left fl">
-				<a href="index.html" title=""><img src="images/logo_edu.png" alt="" /></a>
-			</div>
-			<div class="header-right fr">
-				<a href="index.html" title=""><img src="images/banner.jpg" alt="" /></a>
-			</div>
-			<div class="clr"></div>
+
 		</div>
 		<!-- end header -->
 
@@ -37,12 +38,12 @@
 		<!-- begin content -->
 		<div id="content">
 			<div class="content-left fl">
-				<h3>Danh mục tin</h3>
-				<ul>
-					<li><a href="danhmuc.html">Thời sự</a></li>
+				<h3 style="color: red;">Danh mục tin</h3>
+				<ul id="newsDirectory">
+					<!-- <li><a href="danhmuc.html">Thời sự</a></li>
 					<li><a href="danhmuc.html">Góc nhìn</a></li>
 					<li><a href="danhmuc.html">Thế giới</a></li>
-					<li><a href="danhmuc.html">Kinh doanh</a></li>
+					<li><a href="danhmuc.html">Kinh doanh</a></li> -->
 				</ul>
 			</div>
 			<div class="content-right fr" id="detail">
@@ -57,8 +58,7 @@
 		<!-- end content -->
 
 		<div id="footer">
-			<p>Trung tâm đào tạo Lập trình viên VinaEnter EDU</p>
-			<p>Copyright &copy 2014 - Designed by <a href="" title="">VinaEnter</a></p>
+
 		</div>
 	</div>
 </body>
